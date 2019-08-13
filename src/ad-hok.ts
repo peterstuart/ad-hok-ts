@@ -48,7 +48,7 @@ const branch = <A, B>(
 const addProps = <A, B, C>(makeProps: (props: B) => C) =>
   mapEither((props: B) => ({ ...props, ...makeProps(props) }));
 
-const render = <A, B, C>(fromProps: (props: B) => C) => mapEither(fromProps);
+const render = mapEither;
 
 const returns = <A, B>(f: (props: B) => A) =>
   flatMapEither((props: B) => newLeft(f(props)));
